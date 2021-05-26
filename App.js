@@ -1,21 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import Tabs from "./navigation/Tabs";
+import { createStackNavigator } from '@react-navigation/stack';
+import Login from './containers/Login';
+import Register from './containers/Register';
+import Home from './containers/Home';
+import Messages from './containers/Messages';
+import Matches from './containers/Matches';
+import Profile from './containers/Profile';
+import Chat from './containers/Chat';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const Stack = createStackNavigator();
+
+const globalScreenoptions={
+  headerStyle:{backgroundColor:'#9932cc'},
+  headerTitleStyle:{color:'white'},
+  headerTintColor: 'white',
+  //headerShown:{false}
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => {
+  return (
+    <NavigationContainer>
+    <Stack.Navigator  screenOptions={globalScreenoptions} >
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Message" component={Messages} />
+        <Stack.Screen name="Match" component={Matches} />
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="Chat" component={Chat} />
+        </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
+
+
+export default App;
