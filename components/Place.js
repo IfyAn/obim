@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
   text:{
     fontSize:14,
     fontWeight:'400',
-    color:'#696969'
+    color:'#fff'
   },
 });

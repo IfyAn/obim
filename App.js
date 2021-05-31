@@ -9,6 +9,7 @@ import Messages from './containers/Messages';
 import Matches from './containers/Matches';
 import Profile from './containers/Profile';
 import Chat from './containers/Chat';
+import Settings from './containers/Settings';
 
 const Stack = createStackNavigator();
 
@@ -29,11 +30,14 @@ const App = () => {
         <Stack.Screen name="Message" component={Messages} />
         <Stack.Screen name="Match" component={Matches} />
         <Stack.Screen name="Profile" component={Profile} />
-        <Stack.Screen name="Chat" component={Chat} />
+        <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="Chat" component={Chat} options={({route})=>({title: route.params.name})} />
         </Stack.Navigator>
     </NavigationContainer>
   )
 }
+
+        {/* <Stack.Screen name="Chat" component={Chat} /> */}
 
 
 export default App;

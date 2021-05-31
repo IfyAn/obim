@@ -34,8 +34,8 @@ const Login = ({ navigation }) => {
                         <Input placeholder='password' secureTextEntry type='password' value={password} onChangeText={text=>setPassword(text)} onSubmitEditing={signIn} />
                   </View>
                   
-                  <Button onPress={()=>navigation.navigate('Register')} containerStyle={styles.button} title='Register'  />
-                  {/* <Button onPress={()=>navigation.navigate('ForgetPassword')}containerStyle={styles.button} title='Forget Password' /> */}
+                  <Button onPress={()=>navigation.navigate('Login')} containerStyle={styles.button} title='Login'   />
+                  <Button onPress={()=>navigation.navigate('Register')} containerStyle={styles.button} title='Register' type='outline' />
                   <View style={{height:200}} />
                   </ImageBackground>
             </KeyboardAvoidingView>

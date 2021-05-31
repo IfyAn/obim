@@ -139,19 +139,18 @@ export default StyleSheet.create({
 
 	// COMPONENT - FILTERS
 	filters: {
-		backgroundColor: WHITE,
-		padding: 10,
-		borderRadius: 20,
-		width: 70,
+		backgroundColor: '#faebd7',
+		padding: 5,
+		borderRadius: 5,
 		shadowOpacity: 0.05,
 		shadowRadius: 10,
 		shadowColor: BLACK,
 		shadowOffset: { height: 0, width: 0 }
 	},
 	filtersText: {
-		//fontFamily: ICON_FONT,
-		color: DARK_GRAY,
-		fontSize: 13
+		fontSize: 13,
+		marginTop:20,
+		marginLeft:10
 	},
 
 	// COMPONENT - MESSAGE

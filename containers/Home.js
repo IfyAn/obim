@@ -29,9 +29,9 @@ const Home = ({navigation}) => {
                 </View>
           ),
           headerRight:()=>(
-             <View style={{width:80, marginRight:20,flexDirection:'row', justifyContent:'space-between'}}>
-                   <TouchableOpacity activeOpacity={0.5} >
-                        <Text>Sign Out</Text>
+             <View style={{width:80, marginRight:20,flexDirection:'row', justifyContent:'space-evenly'}}>
+                   <TouchableOpacity activeOpacity={0.5} onPress={()=>navigation.navigate('Settings')}>
+                        <Text style={{fontSize:16, fontWeight:'800', right:5}}>Settings</Text>
                    </TouchableOpacity>
                    <TouchableOpacity activeOpacity={0.5}  onPress={signOutUser}>
                         <Octicons name='sign-out' size={24} color='blue' />
@@ -46,16 +46,18 @@ const Home = ({navigation}) => {
       style={styles.bg}
     >
       <View style={styles.containerHome}>
-        <Place />
+        <View style={styles.filtersText} >
+             <Place />
+        </View>
 
         <View style={styles.top}>
-            <TouchableOpacity onPress={()=>navigation.navigate('Message')} >
+            <TouchableOpacity onPress={()=>navigation.navigate('Message')} style={styles.filters} >
                <Text> Messages</Text> 
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Match')}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Match')} style={styles.filters}>
                <Text> Matches</Text> 
             </TouchableOpacity>
-            <TouchableOpacity onPress={()=>navigation.navigate('Profile')}>
+            <TouchableOpacity onPress={()=>navigation.navigate('Profile')} style={styles.filters}>
                <Text> Your Profile</Text> 
             </TouchableOpacity>
         </View>
@@ -64,7 +66,7 @@ const Home = ({navigation}) => {
           loop={true}
           verticalSwipe={false}
           renderNoMoreCards={() => null}
-          ref={swiper => (this.swiper = swiper)}
+          ref={swiper => (swiper=swiper)}
         >
           {Demo.map((item, index) => (
             <Card key={index}>
